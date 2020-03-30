@@ -61,6 +61,7 @@ body {
 
 /*BORDES*/
 .border { border: 1px solid lightgray; }
+.border > * { border: 1px solid lightgray; }
 
 .bt { border-top: 1px solid lightgray; }
 .br { border-right: 1px solid lightgray; }
@@ -82,6 +83,13 @@ body {
 .m-4 { margin: 1.5em; }
 .m-5 { margin: 3em; }
 .mx-auto { margin-left: auto; margin-right: auto; }
+
+.m-t-0 { margin: 0 0 ; }
+.m-t-1 { margin: 0.25em 0; }
+.m-t-2 { margin: 0.5em 0 ; }
+.m-t-3 { margin: 1em 0 ; }
+.m-t-4 { margin: 1.5em 0 ; }
+.m-t-5 { margin: 3em 0 ; }
 
 /*OTROS*/
 .img-fluid {
@@ -131,6 +139,7 @@ body {
 #panel_registro {
     margin: 0em 1em ;
     background-color: #464646 ;
+    height: 330px ;
 }
 
 #panel_registro > div,a   {
@@ -139,7 +148,7 @@ body {
 }
 
 #panel_principal    {
-    padding: 2em 4em ;
+    padding: 2em 2em ;
 }
 
 #titulo_registro    {
@@ -155,6 +164,10 @@ body {
     width: 15em ;
     border: none ;
     padding: 1em 1em ;
+}
+
+#panel_cards_noticias   {
+    height: 500px ;
 }
 
 .boton_rojo {
@@ -185,6 +198,49 @@ body {
     font-size: xx-large ;
 }
 
+#boton_menu {
+    display: flex ;
+    flex-direction: column ;
+    align-items: center ;
+    justify-content: center ;
+    min-width: 150px ;
+    min-height: 75px ;
+}
+
+#boton_menu > div {
+    border-radius: 5% ;
+    height: 7px ;
+    width: 60px ;
+    background-color: #303030 ;
+    margin: 5px 0px ;
+}
+
+#boton_menu:hover {
+    background-color: #c60000 ;
+}
+
+
+#boton_menu:hover > div {
+    background-color: white ;
+}
+
+.boton_nav_cards    {
+    font-size: 4em ;
+    background-color: #868686 ;
+    border: none ;
+    color: #464646 ;
+}
+
+
+.boton_nav_cards:hover   {
+    background-color: #c60000 ;
+    color: white ;
+}
+
+#panel_cards_noticias   {
+    background-color: #868686;
+}
+
 @media (min-width: 0px){
     .col-s-1{width: 8.33%;}
     .col-s-2{width: 16.66%;}
@@ -203,6 +259,17 @@ body {
     .w-s-50 { width: 50%; }
     .w-s-75 { width: 75%; }
     .w-s-100 { width: 100%; }
+}
+
+@media( max-width: 768px )  {
+    .hidden-if-less-than-768    {
+        display: none ;
+    }
+
+    
+    #top_row    {
+        flex-direction: column ;
+    }
 }
 
 @media (min-width: 768px){
@@ -243,6 +310,24 @@ body {
     .w-l-50 { width: 50%; }
     .w-l-75 { width: 75%; }
     .w-l-100 { width: 100%; }
+
+    .hidden-if-more-than-1268   {
+        display: none !important ;
+    }
+
+    #boton_menu {
+        display: none ;
+    }
+}
+
+@media( max-width: 1285px )  {
+    .hidden-if-less-than-1285    {
+        display: none ;
+    }
+
+    #panel_registro {
+        display: none ;
+    }
 }
 
 [class*="col-"] { float: left; }

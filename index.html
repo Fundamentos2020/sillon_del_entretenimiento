@@ -8,7 +8,7 @@
     <title>Sillon del Entretenimiento</title>
 </head>
 <body>
-    <div class="flex-row p-3">
+    <div class="flex-row p-3" id="top_row">
         <div class="p-1 g-500 sp-3">
             TRENDING:
         </div>
@@ -20,7 +20,7 @@
         <div class="align-item-center titulo_pagina">
             Sillón del Entretenimiento
         </div>
-        <div class="align-item-right">
+        <div class="align-item-right hidden-if-less-than-768">
             <div class="nav-bar flex-row p-0 flex-wrap">
                 <div class="w-m-50 w-l-25">Noticias</div>
                 <div class="w-m-50 w-l-25">Videojuegos</div>
@@ -28,10 +28,28 @@
                 <div class="w-m-50 w-l-25">Películas</div>
             </div>
         </div>
+        <div class="hidden-if-more-than-1285" id="boton_menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
     <div class="flex-row" id="panel_principal">
-        <div class="flex-grow">
-            Panel izquierdo
+        <div class="flex-column flex-grow" id="panel_izquierdo">
+            <div class="flex-row border" id="panel_cards_noticias">
+                <div class="align-item-left align-item-center">
+                    <button class="boton_nav_cards"><</button>
+                </div>
+                <div class="flex-grow">
+                    Contenido
+                </div>
+                <div class="align-item-right align-item-center">
+                    <button class="boton_nav_cards">></button>
+                </div>
+            </div>
+            <div class="border m-t-3">
+                Panel divisiones.
+            </div>
         </div>
         <div class=" flex-column align-item-right col-2" id="panel_registro">
             <div class="p-2 sp-2" id="titulo_registro">
