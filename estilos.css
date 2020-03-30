@@ -1,10 +1,15 @@
 * { 
     box-sizing: border-box; 
-    font-family: sans-serif;
-    border: solid black 2px ;
+    font-family: 'Raleway', sans-serif ;
+    /* border: solid white 2px ; */
 }
 
-body { margin: 0; }
+body { 
+    margin: 0;
+    background-color: #303030 ;
+    color: white ;
+    
+}
 
 .container {
     width: 75%;
@@ -48,7 +53,7 @@ body { margin: 0; }
 .align-items-center { align-items: center; }
 .align-item-left { margin-right: auto ; }
 .align-item-right { margin-left: auto ; }
-.align-item-center { margin-left: auto ; margin-right: auto ; }
+.align-item-center { margin: auto ; vertical-align: center ; }
 
 .text-center { text-align: center; }
 .text-left { text-align: left; }
@@ -93,26 +98,91 @@ body { margin: 0; }
 .w-75 { width: 75%; }
 .w-100 { width: 100%; }
 
+/*GROSOR DE LETRA*/
+.g-100  { font-weight: 100; }
+.g-200  { font-weight: 200; }
+.g-300  { font-weight: 300; }
+.g-400  { font-weight: 400; }
+.g-500  { font-weight: 500; }
+.g-600  { font-weight: 600; }
+.g-700  { font-weight: 700; }
+
+/*ESPACIADO DE LETRA*/
+.sp-1   { letter-spacing: 0.005em ; }
+.sp-2   { letter-spacing: 0.01em ; }
+.sp-3   { letter-spacing: 0.025em ; }
+.sp-3   { letter-spacing: 0.5em ; }
+
 .nav-bar    {
     list-style-type: none ;
+    height: 100% ;
 } 
 
-.nav-bar > li   {
-    width: 200px ;
-    text-align: center ;
+.nav-bar > div:hover    {
+    background-color: #c60000 ;
+    color: white ;
+} 
+
+.nav-bar > div   {
+    padding: 1em 5em ;
+    color: #cdcdcd ;
 }
 
 #panel_registro {
     margin: 0em 1em ;
+    background-color: #464646 ;
 }
 
 #panel_registro > div,a   {
     text-align: center ;
-    height: 50px ;
+    color: white ;
 }
 
 #panel_principal    {
     padding: 2em 4em ;
+}
+
+#titulo_registro    {
+    font-size: x-large ;
+    background-color: #575757 ;
+}
+
+#input_busqueda {
+    border-radius: 0.5em ;
+    background-color: #868686 ;
+    color: #cbcbcb ;
+    height: 2em ;
+    width: 15em ;
+    border: none ;
+    padding: 1em 1em ;
+}
+
+.boton_rojo {
+    background-color: #c60000 ;
+    color: white ;
+    border-radius: 0.5em ;
+    font-size: 1.25em ;
+    padding: 0.5em 1em ;
+    border: none ;
+}
+
+.background_input   {
+    background-color: #696969 ;
+    color: white ;
+    border: none ;
+    text-align: center ;
+}
+
+.titulo_registro_secundario {
+    padding: 0.5em 2em ;
+}
+
+.top_second_row {
+    background-color: #828282 ;
+}
+
+.titulo_pagina  {
+    font-size: xx-large ;
 }
 
 @media (min-width: 0px){
