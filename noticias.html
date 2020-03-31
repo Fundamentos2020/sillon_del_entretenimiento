@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
+    <title>Sillon del Entretenimiento</title>
+</head>
+<body>
+    <div class="flex-row p-3" id="top_row">
+        <div class="p-1 g-500 sp-3">
+            TRENDING:
+        </div>
+        <div class="align-item-right">
+            <input type="text" placeholder="SEARCH" id="input_busqueda">
+        </div>
+    </div>
+    <div class="flex-row top_second_row">
+        <div class="align-item-center titulo_pagina">
+            Sillón del Entretenimiento
+        </div>
+        <div class="align-item-right hidden-if-less-than-768">
+            <div class="nav-bar flex-row p-0 flex-wrap">
+                <div class="w-m-50 w-l-25">Noticias</div>
+                <div class="w-m-50 w-l-25">Videojuegos</div>
+                <div class="w-m-50 w-l-25">Series</div>
+                <div class="w-m-50 w-l-25">Películas</div>
+            </div>
+        </div>
+        <div class="hidden-if-more-than-1285" id="boton_menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="flex-row" id="panel_principal">
+        <div class="flex-column flex-grow" id="panel_izquierdo">
+            <h1 class="g-200">Noticias</h1>
+            <div class="contenedor_cards w-s-100 flex-row">
+                <div class="card_pag_noticias w-s-50 m-s-2">
+                    <div class="contenedor_imagen text-center">
+                        <img class="img-fluid p-2" src="https://picsum.photos/500/200">
+                    </div>
+                    <h2>Título</h2>
+                    <div class="overflow_hidden">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, id quam! Vel, repudiandae eaque? Eligendi distinctio illo, cum doloremque a nam recusandae culpa vitae, aliquam modi nulla consectetur vel! Provident.
+                    </div>
+                </div>
+                <div class="card_pag_noticias w-s-50 m-s-2">
+                    <div class="contenedor_imagen text-center">
+                        <img class="img-fluid p-2" src="https://picsum.photos/500/200">
+                    </div>
+                    <h2>Título</h2>
+                    <div class="overflow_hidden">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, id quam! Vel, repudiandae eaque? Eligendi distinctio illo, cum doloremque a nam recusandae culpa vitae, aliquam modi nulla consectetur vel! Provident.
+                    </div>
+                </div>
+            </div>
+            <div class="m-t-5 flex-row">
+                <button class="align-item-right boton_nav_noticias">
+
+                </button>
+                <button class="boton_nav_noticias m-left-2">
+
+                </button>
+                <button class="boton_nav_noticias m-left-2">
+
+                </button>
+            </div>
+        </div>
+        <div class=" flex-column align-item-right col-2" id="panel_registro">
+            <div class="p-2 sp-2" id="titulo_registro">
+                Registro
+            </div>
+            <div class="titulo_registro_secundario sp-2">
+                Nombre de usuario
+            </div>
+            <input class="background_input" type="text">
+            <div class="titulo_registro_secundario"> 
+                Contraseña
+            </div>
+            <input class="background_input" type="password">
+            <div class="titulo_registro_secundario">
+                <input type="checkbox"><span>Recuerdame</span>
+            </div>
+            <div class="p-1">
+                <button class="boton_rojo">INICIAR SESIÓN</button>
+            </div>
+            <div class="flex-column p-2">
+                <a href="">Registrarse</a>
+                <a href="">¿Olvidaste tu contraseña?</a>
+            </div>
+        </div>
+        <div id="panel_comentarios_recientes">
+            <div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
