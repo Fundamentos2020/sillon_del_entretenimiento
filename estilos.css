@@ -145,7 +145,7 @@ body {
 
 /*COLORES*/
 .b-red     { background-color: #c60000 ;}
-.b-ligh-gray    { background-color: #c4c4c4 ; }
+.b-light-gray    { background-color: #c4c4c4 ; }
 .b-dark-gray    { background-color: #464646 ;}
 
 /*IMAGENES*/
@@ -161,6 +161,7 @@ body {
 .nav-bar > div:hover    {
     background-color: #c60000 ;
     color: white ;
+    cursor: pointer ;
 } 
 
 .nav-bar > div   {
@@ -250,11 +251,13 @@ body {
 
 #boton_menu:hover {
     background-color: #c60000 ;
+    cursor: pointer ;
 }
 
 
 #boton_menu:hover > div {
     background-color: white ;
+    cursor: pointer ;
 }
 
 .boton_nav_cards    {
@@ -268,6 +271,7 @@ body {
 .boton_nav_cards:hover   {
     background-color: #c60000 ;
     color: white ;
+    cursor: pointer ;
 }
 
 #panel_cards_noticias   {
@@ -287,7 +291,6 @@ body {
     .hidden-if-less-than-768    {
         display: none ;
     }
-
     
     #top_row    {
         flex-direction: column ;
@@ -314,6 +317,7 @@ body {
 .title-card:hover     {
     background-position:0 0;
     color: white ;
+    cursor: pointer ;
 }
 
 .content-card   {
@@ -325,7 +329,9 @@ body {
     height: 200px ;
 }
 
-
+.img-noticia-especifica {
+    object-fit: contain ;
+}
 
 .boton_nav_noticias {
     height: 50px ;
@@ -336,6 +342,7 @@ body {
 
 .boton_nav_noticias:hover{
     background-color: #c60000 ;
+    cursor: pointer ;
 }
 
 .overflow_hidden    {
@@ -356,7 +363,37 @@ body {
 
 .card_pag_noticias:hover {
     background-position:0 0;
-    color: #c60000
+    color: #c60000 ;
+    cursor: pointer ;
+}
+
+.foto-perfil    {
+    width: 100px ;
+    height: 100px ;
+    max-width: 100px ;
+    max-height: 100px ;
+    border-radius: 50% ;
+    border: solid white 1px ;
+    padding: 3em ;
+    background-image: url("https://picsum.photos/800/300");
+    background-size: contain ;
+    margin-right: 1em ;
+}
+
+.comentario {
+    border-radius: 1em ;
+}
+
+.seccion-comentarios    {
+    background-color: #696969;
+    border-radius: 0em 0em 1em 1em ;
+}
+
+.detalle-comentarios {
+    background-color: #c60000 ;
+    color: white ;
+    padding-left: 1em ;
+    border-radius:  1em 1em 0em 0em ;
 }
 
 @media (min-width: 0px){
