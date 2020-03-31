@@ -308,7 +308,7 @@ body {
     background: linear-gradient(to top, #575757 0%, #575757 50%, #c60000 50%, #c60000 100%);
     background-size: 100% 200% ;
     background-position: 0 100% ;
-    transition: background-position 0.3s;
+    transition: 0.3s;
 }
 
 .title-card:hover     {
@@ -325,12 +325,7 @@ body {
     height: 200px ;
 }
 
-.card_pag_noticias  {
-    height: auto ;
-    background-color: #696969 ;
-    padding: 1em ;
-    border-radius: 0.5em ;
-}
+
 
 .boton_nav_noticias {
     height: 50px ;
@@ -348,6 +343,21 @@ body {
     overflow: hidden ;
 }
 
+.card_pag_noticias  {
+    height: auto ;
+    padding: 1em ;
+    border-radius: 0.5em ;
+
+    background: linear-gradient(to top, #575757 0%, #575757 50%, white 50%, white 100%);
+    background-size: 100% 200% ;
+    background-position: 0 100% ;
+    transition: 1s;
+}
+
+.card_pag_noticias:hover {
+    background-position:0 0;
+    color: #c60000
+}
 
 @media (min-width: 0px){
     .col-s-1{width: 8.33%;}
