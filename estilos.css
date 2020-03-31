@@ -267,7 +267,6 @@ body {
     color: #464646 ;
 }
 
-
 .boton_nav_cards:hover   {
     background-color: #c60000 ;
     color: white ;
@@ -291,7 +290,7 @@ body {
     .hidden-if-less-than-768    {
         display: none ;
     }
-    
+
     #top_row    {
         flex-direction: column ;
     }
@@ -375,9 +374,10 @@ body {
     border-radius: 50% ;
     border: solid white 1px ;
     padding: 3em ;
-    background-image: url("https://picsum.photos/800/300");
+    background-image: url("https://picsum.photos/300/300");
     background-size: contain ;
     margin-right: 1em ;
+    background-repeat: no-repeat ;
 }
 
 .comentario {
@@ -495,4 +495,8 @@ body {
 
 [class*="col-"] { float: left; }
 [class*="flex-"] { display: flex; }
+
+.change-cursor-on-hover:hover {
+    cursor: pointer ;
+}
 
