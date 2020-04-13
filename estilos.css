@@ -137,6 +137,17 @@ body {
 .g-600  { font-weight: 600; }
 .g-700  { font-weight: 700; }
 
+/*TAMAÑO DE LETRA*/
+.font-size-xxs  {   font-size: xx-small ;}
+.font-size-xs   {   font-size: x-small ;}
+.font-size-sr   {   font-size: smaller ;}
+.font-size-s    {   font-size: small ;}
+.font-size-m    {   font-size: medium ;}
+.font-size-l    {   font-size: large ;}
+.font-size-lr   {   font-size: larger ;}
+.font-size-xl  {   font-size: x-large ;}
+.font-size-xxl  {   font-size: xx-large ;}
+
 /*ESPACIADO DE LETRA*/
 .sp-1   { letter-spacing: 0.005em ; }
 .sp-2   { letter-spacing: 0.01em ; }
@@ -176,10 +187,23 @@ body {
     width: 320px ;
 }
 
-#panel_registro > div,a   {
+#panel_reg > div,a   {
     text-align: center ;
     color: white ;
 }
+
+#panel_reg {
+    margin: 0em 1em ;
+    background-color: #464646 ;
+    height: 350px ;
+    width: 320px ;
+}
+
+#panel_reg > div,a   {
+    text-align: center ;
+    color: white ;
+}
+
 
 #panel_principal    {
     padding: 2em 2em ;
@@ -394,6 +418,16 @@ body {
     color: white ;
     padding-left: 1em ;
     border-radius:  1em 1em 0em 0em ;
+}
+
+#menu_movil {
+    position: fixed ;
+    top: 0px ;
+    bottom: 0px ;
+    right: 0px ;
+    width: 0px ;
+    background-color: #303030 ;
+    transition: 0.5s ;
 }
 
 @media (min-width: 0px){
