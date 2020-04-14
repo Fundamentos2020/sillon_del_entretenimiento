@@ -28,7 +28,7 @@
                 <div class="w-m-50 w-l-25">Películas</div>
             </div>
         </div>
-        <div class="hidden-if-more-than-1285" id="boton_menu">
+        <div class="hidden-if-more-than-1285" id="boton_menu" onclick="mostrarMenu()">
             <div></div>
             <div></div>
             <div></div>
@@ -55,7 +55,7 @@
                     <button class="boton_nav_cards">></button>
                 </div>
             </div>
-            <div class="m-3 flex-row" id="panel_cards">
+            <div class="m-t-3 flex-row" id="panel_cards">
                 <div class="flex-column column-card col-s-12 col-l-4 m-right-3">
                     <div class="b-red red-accent-card"></div>
                     <div class="b-dark-gray title-card">Videojuegos</div>
@@ -78,7 +78,7 @@
         </div>
         <div class=" flex-column align-item-right col-2" id="panel_registro">
             <div class="p-2 sp-2 text-center" id="titulo_registro">
-                Registro
+                Login
             </div>
             <div class="titulo_registro_secundario sp-2 text-center">
                 Nombre de usuario
@@ -95,7 +95,7 @@
                 <button class="boton_rojo change-cursor-on-hover">INICIAR SESIÓN</button>
             </div>
             <div class="flex-column p-2">
-                <a href="" class="">Registrarse</a>
+                <a href="registro.html" class="">Registrarse</a>
                 <a href="">¿Olvidaste tu contraseña?</a>
             </div>
         </div>
@@ -108,15 +108,15 @@
     <!-- Menu para móvil -->
     <div class="flex-column text-center" id="menu_movil">
         <!-- Botón para cerrar -->
-        <div class="g-700 m-2 font-size-xxl change-cursor-on-hover" id="cerrar_menu_movil">x</div>
-        <div class="g-700 p-3 m-t-5 font-size-xl">Registro</div>
-        <div class="g-700 p-3 m-t-5 font-size-xl">Login</div>
-        <div class="g-700 bt w-75 align-item-left align-item-right m-t-5 font-size-xl"></div>
+        <div class="g-700 m-2 font-size-xxl change-cursor-on-hover" id="cerrar_menu_movil" onclick="ocultarMenu()">x</div>
+        <div class="g-700 p-3 m-t-2 font-size-xl" onclick="document.location = 'registro.html'">Registro</div>
+        <div class="g-700 p-3 m-t-2 font-size-xl">Login</div>
+        <div class="g-700 bt w-100 align-item-right align-item-left m-t-2"></div>
         <div class="g-500 p-3 font-size-xl">Noticias</div>
-        <div class="g-500 p-3 m-t-5 font-size-xl">Videojuegos</div>
-        <div class="g-500 p-3 m-t-5 font-size-xl">Series</div>
-        <div class="g-500 p-3 m-t-5 font-size-xl">Peliculas</div>
+        <div class="g-500 p-3 m-t-3 font-size-xl">Videojuegos</div>
+        <div class="g-500 p-3 m-t-3 font-size-xl">Series</div>
+        <div class="g-500 p-3 m-t-3 font-size-xl">Peliculas</div>
     </div>
-    <script src="sillon.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

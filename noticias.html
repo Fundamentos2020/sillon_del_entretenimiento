@@ -70,17 +70,17 @@
             </div>
         </div>
         <div class=" flex-column align-item-right col-2" id="panel_registro">
-            <div class="p-2 sp-2" id="titulo_registro">
+            <div class="p-2 sp-2 text-center" id="titulo_registro">
                 Registro
             </div>
-            <div class="titulo_registro_secundario sp-2">
+            <div class="titulo_registro_secundario sp-2 text-center">
                 Nombre de usuario
             </div>
-            <input class="background_input" type="text">
-            <div class="titulo_registro_secundario"> 
+            <input class="text-center background_input" type="text">
+            <div class="text-center titulo_registro_secundario"> 
                 Contraseña
             </div>
-            <input class="background_input" type="password">
+            <input class=" text-center background_input" type="password">
             <div class="titulo_registro_secundario flex-row">
                 <input type="checkbox"><span>Recuerdame</span>
             </div>
@@ -88,7 +88,7 @@
                 <button class="boton_rojo">INICIAR SESIÓN</button>
             </div>
             <div class="flex-column p-2">
-                <a href="">Registrarse</a>
+                <a href="registro.html">Registrarse</a>
                 <a href="">¿Olvidaste tu contraseña?</a>
             </div>
         </div>
@@ -98,6 +98,18 @@
             </div>
         </div>
     </div>
-    <script src="sillon.js"></script>
+    <!-- Menu para móvil -->
+    <div class="flex-column text-center" id="menu_movil">
+        <!-- Botón para cerrar -->
+        <div class="g-700 m-2 font-size-xxl change-cursor-on-hover" id="cerrar_menu_movil" onclick="ocultarMenu()">x</div>
+        <div class="g-700 p-3 m-t-2 font-size-xl">Registro</div>
+        <div class="g-700 p-3 m-t-2 font-size-xl">Login</div>
+        <div class="g-700 bt w-100 align-item-right align-item-left m-t-2"></div>
+        <div class="g-500 p-3 font-size-xl">Noticias</div>
+        <div class="g-500 p-3 m-t-3 font-size-xl">Videojuegos</div>
+        <div class="g-500 p-3 m-t-3 font-size-xl">Series</div>
+        <div class="g-500 p-3 m-t-3 font-size-xl">Peliculas</div>
+    </div>
+    <script src="noticias.js"></script>
 </body>
 </html>
