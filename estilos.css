@@ -158,6 +158,7 @@ body {
 .b-red     { background-color: #c60000 ;}
 .b-light-gray    { background-color: #c4c4c4 ; }
 .b-dark-gray    { background-color: #464646 ;}
+.b-normal-gray  {   background-color: #575757; }
 
 /*IMAGENES*/
 .img-contain    { object-fit: contain ;}
@@ -430,6 +431,14 @@ body {
     transition: 0.5s ;
 }
 
+#texto_editar_noticia  {
+    width: 90% ;
+}
+
+#titulo_editar_noticia  {
+    width: 75% ;
+}
+
 @media (min-width: 0px){
     .col-s-1{width: 8.33%;}
     .col-s-2{width: 16.66%;}
@@ -537,4 +546,5 @@ body {
 #menu_movil > div:hover{
     cursor: pointer;
 }
+
 
