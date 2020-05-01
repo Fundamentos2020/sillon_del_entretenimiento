@@ -6,24 +6,24 @@
             "Resumen" : "Los videojuegos en México, Afectan los negocios de malteadas?" 
         },
         {
-            "Titulo" : "Videojuegos en México",
-            "ImagePath" : "Imagenes de Noticia/vid_mex.jpg",
-            "Resumen" : "Los videojuegos en México, Afectan los negocios de malteadas?" 
+            "Titulo" : "La rueda del Tiempo inicia filmación",
+            "ImagePath" : "Imagenes de Noticia/wot_serie.jpg",
+            "Resumen" : "La rueda del tiempo inicia filmación en Praga, República Checa." 
         },
         {
-            "Titulo" : "Videojuegos en México",
-            "ImagePath" : "Imagenes de Noticia/vid_mex.jpg",
-            "Resumen" : "Los videojuegos en México, Afectan los negocios de malteadas?" 
+            "Titulo" : "Secuela a Space JAM",
+            "ImagePath" : "Imagenes de Noticia/space_jam.jpg",
+            "Resumen" : "Se revela una secuela al exito Space Jam." 
         },
         {
-            "Titulo" : "Videojuegos en México",
-            "ImagePath" : "Imagenes de Noticia/vid_mex.jpg",
-            "Resumen" : "Los videojuegos en México, Afectan los negocios de malteadas?" 
+            "Titulo" : "Adaptaciones a TV de Mundodisco",
+            "ImagePath" : "Imagenes de Noticia/discworld.jpg",
+            "Resumen" : "Se planean más adaptaciones del mundo creado por Terry Pratchett." 
         },
         {
-            "Titulo" : "Videojuegos en México",
-            "ImagePath" : "Imagenes de Noticia/vid_mex.jpg",
-            "Resumen" : "Los videojuegos en México, Afectan los negocios de malteadas?" 
+            "Titulo" : "Cyberpunk anuncia fecha de lanzamiento.",
+            "ImagePath" : "Imagenes de Noticia/cyberpunk.jpg",
+            "Resumen" : "La compañia CD Projekt anuncia fecha de lanzamiento para el esperado juego." 
         }
     ]
 }

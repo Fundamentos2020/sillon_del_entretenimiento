@@ -184,8 +184,8 @@ body {
 #panel_registro {
     margin: 0em 1em ;
     background-color: #464646 ;
-    height: 350px ;
-    width: 320px ;
+    max-height: 350px ;
+    max-width: 320px ;
 }
 
 #panel_reg > div,a   {
@@ -437,6 +437,11 @@ body {
 
 #titulo_editar_noticia  {
     width: 75% ;
+}
+
+.contenedor_imagen  {
+    max-width: 400px ;
+    margin: auto ;
 }
 
 @media (min-width: 0px){
