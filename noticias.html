@@ -37,8 +37,8 @@
     <div class="flex-row" id="panel_principal">
         <div class="flex-column flex-grow" id="panel_izquierdo">
             <h1 class="g-200">Noticias</h1>
-            <div class="contenedor_cards w-s-100 flex-row">
-                <div class="card_pag_noticias w-s-50 m-s-2" onclick="document.location = 'noticia_especifica.html'">
+            <div class="contenedor_cards w-s-100 flex-row" id="contenedor_tarjetas">
+                <!-- <div class="card_pag_noticias w-s-50 m-s-2" onclick="document.location = 'noticia_especifica.html'">
                     <div class="contenedor_imagen text-center">
                         <img class="img-fluid p-2" src="https://picsum.photos/500/200">
                     </div>
@@ -55,18 +55,10 @@
                     <div class="overflow_hidden">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, id quam! Vel, repudiandae eaque? Eligendi distinctio illo, cum doloremque a nam recusandae culpa vitae, aliquam modi nulla consectetur vel! Provident.
                     </div>
-                </div>
+                </div> -->
             </div>
-            <div class="m-t-5 flex-row">
-                <button class="align-item-right boton_nav_noticias">
-
-                </button>
-                <button class="boton_nav_noticias m-left-2">
-
-                </button>
-                <button class="boton_nav_noticias m-left-2">
-
-                </button>
+            <div class="m-t-5 flex-row" id="contenedor_botones_nav_noticias">
+                <!-- Se actualiza el número de botones de acuerdo al número de noticias -->
             </div>
         </div>
         <div class=" flex-column align-item-right col-2" id="panel_registro">
@@ -111,5 +103,6 @@
         <div class="g-500 p-3 m-t-3 font-size-xl" onclick="document.location = 'Peliculas/peliculas.html'">Peliculas</div>
     </div>
     <script src="menu.js"></script>
+    <script src="menu_varias_noticias.js"></script>
 </body>
 </html>

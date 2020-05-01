@@ -1,0 +1,29 @@
+{
+    "noticias" : [
+        {
+            "Titulo" : "Videojuegos en México",
+            "ImagePath" : "Imagenes de Noticia/vid_mex.jpg",
+            "Resumen" : "Los videojuegos en México, Afectan los negocios de malteadas?" 
+        },
+        {
+            "Titulo" : "Videojuegos en México",
+            "ImagePath" : "Imagenes de Noticia/vid_mex.jpg",
+            "Resumen" : "Los videojuegos en México, Afectan los negocios de malteadas?" 
+        },
+        {
+            "Titulo" : "Videojuegos en México",
+            "ImagePath" : "Imagenes de Noticia/vid_mex.jpg",
+            "Resumen" : "Los videojuegos en México, Afectan los negocios de malteadas?" 
+        },
+        {
+            "Titulo" : "Videojuegos en México",
+            "ImagePath" : "Imagenes de Noticia/vid_mex.jpg",
+            "Resumen" : "Los videojuegos en México, Afectan los negocios de malteadas?" 
+        },
+        {
+            "Titulo" : "Videojuegos en México",
+            "ImagePath" : "Imagenes de Noticia/vid_mex.jpg",
+            "Resumen" : "Los videojuegos en México, Afectan los negocios de malteadas?" 
+        }
+    ]
+}
