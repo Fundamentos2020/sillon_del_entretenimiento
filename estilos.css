@@ -56,6 +56,8 @@ body {
 .align-item-right { margin-left: auto ; }
 .align-item-center { margin: auto ; vertical-align: center ; }
 
+.align-item-center { vertical-align: center ; }
+
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
@@ -442,6 +444,11 @@ body {
 .contenedor_imagen  {
     max-width: 400px ;
     margin: auto ;
+}
+
+.imagen_usuario {
+    width: 150px ;
+    height: auto ;
 }
 
 @media (min-width: 0px){

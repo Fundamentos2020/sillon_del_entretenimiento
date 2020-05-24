@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <title>Administración de Cuentas</title>
+</head>
+<body>
+    <div class="flex-row p-3" id="top_row">
+        <div class="p-1 g-500 sp-3">
+            TRENDING:
+        </div>
+        <div class="align-item-right">
+            <input type="text" placeholder="SEARCH" id="input_busqueda">
+        </div>
+    </div>
+    <div class="flex-row top_second_row">
+        <div class="align-item-center titulo_pagina change-cursor-on-hover" onclick="document.location = '../../index.html'" >
+            Sillón del Entretenimiento
+        </div>
+    </div>
+    <div class="text-center p-3">
+        <span>Buscar Usuario:</span>
+        <input class="align-center" id="input_usuario">
+        <button id="boton_buscar_usuario">Buscar</button>
+    </div>
+    <div class="flex-column text-center col-12" id="panel_principal">
+        <!-- Aquí se insertan las tarjetas de usuarios. -->
+        <div class="flex-row b-dark-gray m-3 flex-wrap">
+            <div class="p-1">
+                <img src="../Imagenes de Noticia/space_jam.jpg" class="imagen_usuario">
+            </div>
+            <div class="p-3">
+                <h3>Nombre de Usuario</h3>
+            </div>
+            <div class="align-item-right flex-row">
+                <div class="p-4">
+                    <select id="rol_usuario">
+                        <option value="Em">EM</option>
+                        <option value="Em">EM</option>
+                    </select>
+                    <button>Actualizar</button>
+                    <button>Eliminar</button>
+                </div>
+            </div>
+        </div>
+        <div class="flex-row b-dark-gray m-3 flex-wrap">
+            <div class="p-1">
+                <img src="../Imagenes de Noticia/space_jam.jpg" class="imagen_usuario">
+            </div>
+            <div class="p-3">
+                <h3>Nombre de Usuario</h3>
+            </div>
+            <div class="align-item-right flex-row">
+                <div class="p-4">
+                    <select id="rol_usuario">
+                        <option value="Em">EM</option>
+                        <option value="Em">EM</option>
+                    </select>
+                    <button>Actualizar</button>
+                    <button>Eliminar</button>
+                </div>
+            </div>
+        </div>
+        <div class="flex-row b-dark-gray m-3 flex-wrap">
+            <div class="p-1">
+                <img src="../Imagenes de Noticia/space_jam.jpg" class="imagen_usuario">
+            </div>
+            <div class="p-3">
+                <h3>Nombre de Usuario</h3>
+            </div>
+            <div class="align-item-right flex-row">
+                <div class="p-4">
+                    <select id="rol_usuario">
+                        <option value="Em">EM</option>
+                        <option value="Em">EM</option>
+                    </select>
+                    <button>Actualizar</button>
+                    <button>Eliminar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Aquí se insertan las tarjetas de usuarios. -->
+    </div>
+    <script src="AdminCuentas.js"></script>
+</body>
+</html>
