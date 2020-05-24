@@ -559,4 +559,19 @@ body {
     cursor: pointer;
 }
 
+#imagen_principal   {
+    height: 300px ;
+}
 
+#imagen_secundaria   {
+    height: 200px ;
+    width: auto ;
+}
+
+.ellipsis {
+    text-overflow: ellipsis ;
+  
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+  }

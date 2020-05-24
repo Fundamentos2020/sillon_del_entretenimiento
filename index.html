@@ -38,41 +38,58 @@
         <div class="flex-column flex-grow" id="panel_izquierdo">
             <div class="flex-row" id="panel_cards_noticias">
                 <div class="align-item-left align-item-center">
-                    <button class="boton_nav_cards"><</button>
+                    <button class="boton_nav_cards" id="boton_izq"><</button>
                 </div>
                 <div class="flex-grow border">
-                    <div class="b-dark-gray flex-column w-s-100 m-t-3">
+                    <div class="b-dark-gray flex-column w-s-100 m-t-3" id="menu_mostrar_noticias">
                         <div class="text-center">
-                            <img class="img-fluid p-1" src="https://picsum.photos/800/300">
+                            <img class="img-fluid p-1" src="https://picsum.photos/700/800" id="imagen_principal">
                         </div>
                         <div class="p-3" id="principal-card">
                             <h1>Titulo noticia</h1>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa dolorum iusto fugiat ut at saepe tempore quis quia mollitia, ducimus quaerat earum dolores voluptates odit doloremque consectetur enim ullam voluptate?
+                            <span>Resumen de noticia.</span>
                         </div>
                     </div>
                 </div>
                 <div class="align-item-right align-item-center">
-                    <button class="boton_nav_cards">></button>
+                    <button class="boton_nav_cards" id="boton_der">></button>
                 </div>
             </div>
             <div class="m-t-3 flex-row" id="panel_cards">
                 <div class="flex-column column-card col-s-12 col-l-4 m-right-3">
                     <div class="b-red red-accent-card"></div>
                     <div class="b-dark-gray title-card">Videojuegos</div>
-                    <div class="b-light-gray content-card"></div>
-                    <div class="b-dark-gray comment-card"></div>
+                    <div class="b-light-gray content-card text-center" id="img_card_vid">
+                        <img class="img-fluid p-1" src="https://picsum.photos/800/800" id="imagen_secundaria">
+                        <!-- Agregar imagen de la última noticia de videojuegos -->
+                    </div>
+                    <div class="b-dark-gray comment-card" id="text_card_vid">
+                        <h1>Titulo</h1>
+                        
+                        <!-- Título -->
+                    </div>
                 </div>
                 <div class="flex-column column-card col-s-12 col-l-4 m-s-3">
                     <div class="b-red red-accent-card"></div>
                     <div class="b-dark-gray title-card">Series</div>
-                    <div class="b-light-gray content-card"></div>
-                    <div class="b-dark-gray comment-card"></div>
+                    <div class="b-light-gray content-card text-center" id="img_card_ser">
+                        <img class="img-fluid p-1" src="https://picsum.photos/800/800" id="imagen_secundaria">
+                        <!-- Agregar imagen de la última noticia de series -->
+                    </div>
+                    <div class="b-dark-gray comment-card" id="text_card_ser">
+                        <h1>Titulo</h1>
+                        <!-- Título y resumen de la última noticia -->
+                    </div>
                 </div>
                 <div class="flex-column column-card col-s-12 col-l-4 m-left-3">
                     <div class="b-red red-accent-card"></div>
                     <div class="b-dark-gray title-card">Peliculas</div>
-                    <div class="content-card"></div>
-                    <div class="b-dark-gray comment-card"></div>
+                    <div class="b-light-gray content-card" id="img_card_pel">
+                        <!-- Agregar imagen de la última noticia de películas -->
+                    </div>
+                    <div class="b-dark-gray comment-card" id="text_card_pel">
+                        <!-- Título y resumen de la última noticia -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -118,5 +135,6 @@
         <div class="g-500 p-3 m-t-3 font-size-xl" onclick="document.location = 'Peliculas/peliculas.html'">Peliculas</div>
     </div>
     <script src="menu.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
