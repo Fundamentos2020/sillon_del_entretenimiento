@@ -7,6 +7,9 @@ const c_text_v = document.querySelector('#text_card_vid');
 const c_text_s = document.querySelector('#text_card_ser');
 const c_text_p = document.querySelector('#text_card_pel');
 
+/* Boton de login */
+const boton_login = document.getElementById('boton_login');
+
 /* Div que tiene la noticia central */
 const c_noticia_principal = document.querySelector('#menu_mostrar_noticias');
 const boton_der = document.querySelector('#boton_der');
@@ -15,11 +18,18 @@ const boton_izq = document.querySelector('#boton_izq');
 /* Declaración de eventos */
 boton_der.addEventListener('click', cargaSigNoticia );
 boton_izq.addEventListener('click', cargaSigNoticia );
+boton_login.addEventListener('click', login );
 
 /* Declaración de funciones */
 function cargaSigNoticia()  {
-    if( this.id === 'boton_der')
-        console.log( this.id );
+    if( this.id === 'boton_der')    {
+        /* Buscar en un arreglo de noticias el cambio. */
+        var noticia = {};
+        noticia.src = 'https://picsum.photos/800/800';
+        noticia.titulo = 'Prueba';
+        noticia.resumen = 'Hola mundo.';
+        cambiaTarjetaNoticiaPrincipal( noticia );
+    }
 
     else    {/* Carga noticia de la izquierda */
         /* Buscar en un arreglo de noticias el cambio. */
@@ -60,6 +70,25 @@ function cambiaTarjetaNoticiaPrincipal( noticia )  {
     c_noticia_principal.appendChild( c_texto );
 }
 
+/* Login */
+function login()    {
+    let nombre_usuario = document.getElementById('nombre_usuario').value ;
+    let contrasenia = document.getElementById('input_contrasena').value ;
+
+    /* TODO: Inicia sesión de usuario. */
+
+    /* Si fue exitosa, cambia panel de registro. */
+    let panel_registro = document.getElementById('panel_registro');
+    panel_registro.innerHTML = `
+    <div class="text-center">
+    <h1>Nombre Usuario</h1>
+    </div>
+    <a href="Usuarios/Cuenta.html">Administrar Cuenta</a>
+    ` ;
+
+    console.log( contrasenia );
+}
+
 function dameImagenNoticiaSecundaria( noticia ) {
     let imagen = document.createElement('img');
     imagen.className = 'img-fluid p-1';
@@ -69,7 +98,7 @@ function dameImagenNoticiaSecundaria( noticia ) {
 
 /* Cuando carge la página, vamos por las noticias. */
 function pideNoticias() {
-
+    
 }
 
 function agregaNoticias()   {

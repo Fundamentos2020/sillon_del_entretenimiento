@@ -469,6 +469,10 @@ body {
     .w-s-50 { width: 50%; }
     .w-s-75 { width: 75%; }
     .w-s-100 { width: 100%; }
+
+    .comentario {
+        flex-direction: column ;
+    }
 }
 
 @media (min-width: 768px){
@@ -489,6 +493,10 @@ body {
     .w-m-50 { width: 50%; }
     .w-m-75 { width: 75%; }
     .w-m-100 { width: 100%; }
+
+    .comentario {
+        flex-direction: row ;
+    }
 }
 
 @media (min-width: 1285px)  {

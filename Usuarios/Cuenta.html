@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../estilos.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-    <title>Administración de Cuentas</title>
+    <title>Cuenta</title>
 </head>
 <body>
     <div class="flex-row p-3" id="top_row">
@@ -21,8 +21,24 @@
             Sillón del Entretenimiento
         </div>
     </div>
-    <div>
-        <!-- Información de cuenta dependiendo del rol de usuario -->
+    <div class="text-center p-3">
+        <h1 id="nombreUsuario" >Nombre de Usuario</h1>
+    </div>
+    <div class="text-center p-3">
+        <span>Cambiar Contraseña:</span>
+        <input type="password" class="align-center" id="input_usuario">
+        <button id="boton_cambiar_contraseña">Cambiar</button>
+        <!-- Si es dueño, esta página lleva a AdminCuentas.html -->
+    </div>
+    <div class="text-center p-3">
+        <!-- Si es dueño o moderador, se puede crear noticia -->
+        <!-- Si no es dueño o moderador ocultar. -->
+        <a href="url">Crear Noticia</a>
+    </div>
+    <div class="text-center p-3">
+        <!-- Si es dueño, esta página lleva a AdminCuentas.html -->
+        <!-- Si no es dueño, ocultar. -->
+        <a href="url">Administración de Cuentas</a>
     </div>
     <script src="Cuentas.js"></script>
 </body>
