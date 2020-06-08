@@ -29,17 +29,17 @@
             <div class="titulo_registro_secundario sp-2">
                 Nombre de usuario
             </div>
-            <input class="background_input" type="text">
+            <input class="background_input" type="text" id='input_nombre_usuario'>
             <div class="titulo_registro_secundario"> 
                 Contraseña
             </div>
-            <input class="background_input" type="password">
+            <input class="background_input" type="password" id='input_contrasenia'>
             <div class="titulo_registro_secundario"> 
                 E-mail
             </div>
-            <input class="background_input" type="text">
+            <input class="background_input" type="text" id='input_email'>
             <div class="p-1 m-t-2">
-                <button class="boton_rojo change-cursor-on-hover">REGISTRARSE</button>
+                <button class="boton_rojo change-cursor-on-hover" id='boton_registro'>REGISTRARSE</button>
             </div>
             <div class="flex-column p-2">
                 <a href="login.html">Login</a>
@@ -59,6 +59,7 @@
         <div class="g-500 p-3 m-t-5 font-size-xl">Series</div>
         <div class="g-500 p-3 m-t-5 font-size-xl">Peliculas</div>
     </div>
-    <script src="registro.js"></script>
+    <script src="Scripts/api_url.js"></script>
+    <script src="Scripts/registro.js"></script>
 </body>
 </html>

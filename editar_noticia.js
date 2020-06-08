@@ -1,0 +1,2 @@
+
+/* Obtener el botón rojo. */

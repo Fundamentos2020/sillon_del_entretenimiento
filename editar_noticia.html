@@ -32,8 +32,8 @@
             <h1>Titulo de Noticia</h1>
             </div>
             <div class="text-center">
+                <!-- Extraer de aquí el titulo. -->
                 <textarea id="titulo_editar_noticia" rows="2" cols="50">
-Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </textarea>
             </div>
             <br>
@@ -45,8 +45,8 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit.
             <br>
             <br>
             <div class="text-center">
+                <!-- Extraer de aquí el texto de la noticia. -->
                 <textarea id="texto_editar_noticia" rows="4" cols="50">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, rerum quibusdam maxime nulla corrupti inventore ex sit consectetur, fugit harum iste ad pariatur, ea tenetur minima officiis accusamus numquam nam.
                 </textarea>
             </div>
             <br>
@@ -55,7 +55,9 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, rerum quibusd
                 <span>Categoría:</span>
                 <select id="categorias_noticia">
                     <!-- LLenar con las categorias de las noticias. -->
-                    <option value="volvo">Volvo</option>
+                    <option value="Videojuegos">Videojuegos</option>
+                    <option value="Series">Series</option>
+                    <option value="Peliculas">Películas</option>
                 </select>
             </div>
             <br>
@@ -67,6 +69,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, rerum quibusd
         </div>
         <div class="col-1"></div>
     </div>
-    <script src="menu.js"></script>
+    <script src="Scripts/api_url.js"></script>
+    <script src="Scripts/noticias.js"></script>
 </body>
 </html>

@@ -5,10 +5,6 @@ const boton_menu_movil = document.querySelector('#boton_menu');
 boton_menu_movil.addEventListener('click', mostrarMenu );
 cerrar_menu_movil.addEventListener('click', ocultarMenu );
 
-function loadNoticias()  {
-    
-}
-
 function mostrarMenu()  {
     const menu = document.querySelector('#menu_movil');
     menu.style.display = 'inline' ;

@@ -1,4 +1,3 @@
-
 /* Variables globales */
 const contenedor_tarjetas = document.querySelector('#contenedor_tarjetas');
 const contenedor_nav_noticias = document.querySelector('#contenedor_botones_nav_noticias');
@@ -10,7 +9,7 @@ let numNoticias ;
 /* Declaracion de funciones. */
 /* Obtener el json. */
 async function obtenerNoticias()  {
-    arreglo_noticias = await ObtenerNoticias( 20 );
+    arreglo_noticias = await ObtenerNoticiasSeccion( 'Peliculas', 20 );
     numNoticias = arreglo_noticias.length ;
     cargaNoticiasIniciales();
     agregarBotonesNavNoticias();
@@ -72,7 +71,7 @@ function dameTarjetaNoticia( noticia )  {
     console.log( noticia );
     const contenedor_noticia = document.createElement('div');
     contenedor_noticia.className = 'card_pag_noticias w-s-50 m-s-2';
-    contenedor_noticia.onclick = CargaNoticia ;
+    contenedor_noticia.onclick = CargaNoticiaCarpeta ;
     contenedor_noticia.id = `${noticia.id}`;
 
     const cont_img = document.createElement('div');
@@ -80,7 +79,7 @@ function dameTarjetaNoticia( noticia )  {
 
     const img = document.createElement('img');
     img.className = 'img-fluid p-2';
-    img.src = noticia.imagepath ;
+    img.src = '../' + noticia.imagepath ;
 
     const titulo = document.createElement('h2');
     titulo.innerText = noticia.titulo ;
@@ -92,6 +91,15 @@ function dameTarjetaNoticia( noticia )  {
     return( contenedor_noticia );
 }
 
+function CargaNoticiaCarpeta()   {
+    var noticias = JSON.parse( sessionStorage.getItem('noticias') );
+    var id_noticia = this.id ;
+    var noticia = noticias.find( n => n.id == id_noticia );
+
+    localStorage.setItem('noticia_actual', JSON.stringify( noticia ) );
+    
+    window.location.href = '../noticia_especifica.html';
+}
+
 /* Programa, es decir, lo que se ejecuta al cargar la página. */
 obtenerNoticias();
-

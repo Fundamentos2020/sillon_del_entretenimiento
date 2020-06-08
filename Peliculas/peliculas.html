@@ -17,12 +17,12 @@
         </div>
     </div>
     <div class="flex-row top_second_row">
-        <div class="align-item-center titulo_pagina change-cursor-on-hover" onclick="document.location = '../../index.html'" >
+        <div class="align-item-center titulo_pagina change-cursor-on-hover" onclick="document.location = '../index.html'" >
             Sillón del Entretenimiento
         </div>
         <div class="align-item-right hidden-if-less-than-768">
             <div class="nav-bar flex-row p-0 flex-wrap">
-                <div class="w-m-50 w-l-25" onclick="document.location = '../../noticias.html'">Noticias</div>
+                <div class="w-m-50 w-l-25" onclick="document.location = '../noticias.html'">Noticias</div>
                 <div class="w-m-50 w-l-25" onclick="document.location = '../Videojuegos/videojuegos.html'">Videojuegos</div>
                 <div class="w-m-50 w-l-25" onclick="document.location = '../Series/series.html'">Series</div>
                 <div class="w-m-50 w-l-25" onclick="document.location = 'peliculas.html'">Películas</div>
@@ -37,58 +37,33 @@
     <div class="flex-row" id="panel_principal">
         <div class="flex-column flex-grow" id="panel_izquierdo">
             <h1 class="g-200">Peliculas</h1>
-            <div class="contenedor_cards w-s-100 flex-row">
-                <div class="card_pag_noticias w-s-50 m-s-2" onclick="document.location = 'noticia_pelicula_especifica.html'">
-                    <div class="contenedor_imagen text-center">
-                        <img class="img-fluid p-2" src="https://picsum.photos/500/200">
-                    </div>
-                    <h2>Título</h2>
-                    <div class="overflow_hidden">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, id quam! Vel, repudiandae eaque? Eligendi distinctio illo, cum doloremque a nam recusandae culpa vitae, aliquam modi nulla consectetur vel! Provident.
-                    </div>
-                </div>
-                <div class="card_pag_noticias w-s-50 m-s-2" onclick="document.location = 'noticia_pelicula_especifica.html'">
-                    <div class="contenedor_imagen text-center">
-                        <img class="img-fluid p-2" src="https://picsum.photos/500/200">
-                    </div>
-                    <h2>Título</h2>
-                    <div class="overflow_hidden">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, id quam! Vel, repudiandae eaque? Eligendi distinctio illo, cum doloremque a nam recusandae culpa vitae, aliquam modi nulla consectetur vel! Provident.
-                    </div>
-                </div>
+            <div class="contenedor_cards w-s-100 flex-row" id="contenedor_tarjetas">
+                <!-- Se actualiza las tarjetas de aceurdo a las noticias en el json. -->
             </div>
-            <div class="m-t-5 flex-row">
-                <button class="align-item-right boton_nav_noticias">
-
-                </button>
-                <button class="boton_nav_noticias m-left-2">
-
-                </button>
-                <button class="boton_nav_noticias m-left-2">
-
-                </button>
+            <div class="m-t-5 flex-row" id="contenedor_botones_nav_noticias">
+                <!-- Se actualiza el número de botones de acuerdo al número de noticias. -->
             </div>
         </div>
-        <div class=" flex-column align-item-right col-2" id="panel_registro">
+        <div class=" flex-column align-item-right registro_control" id="panel_registro">
             <div class="p-2 sp-2 text-center" id="titulo_registro">
-                Registro
+                Login
             </div>
             <div class="titulo_registro_secundario sp-2 text-center">
                 Nombre de usuario
             </div>
-            <input class="text-center background_input" type="text">
-            <div class="text-center titulo_registro_secundario"> 
+            <input class="background_input text-center" type="text" id="nombre_usuario">
+            <div class="titulo_registro_secundario text-center"> 
                 Contraseña
             </div>
-            <input class=" text-center background_input" type="password">
+            <input class="background_input" type="password" id="input_contrasena">
             <div class="titulo_registro_secundario flex-row">
                 <input type="checkbox"><span>Recuerdame</span>
             </div>
-            <div class="p-1">
-                <button class="boton_rojo">INICIAR SESIÓN</button>
+            <div class="p-1 text-center">
+                <button class="boton_rojo change-cursor-on-hover" id="boton_login">INICIAR SESIÓN</button>
             </div>
             <div class="flex-column p-2">
-                <a href="registro.html" onclick="document.location = 'registro.html'">Registrarse</a>
+                <a href="registro.html" class="" onclick="document.location = 'registro.html'">Registrarse</a>
                 <a href="">¿Olvidaste tu contraseña?</a>
             </div>
         </div>
@@ -102,14 +77,20 @@
     <div class="flex-column text-center" id="menu_movil">
         <!-- Botón para cerrar -->
         <div class="g-700 m-2 font-size-xxl change-cursor-on-hover" id="cerrar_menu_movil" onclick="ocultarMenu()">x</div>
-        <div class="g-700 p-3 m-t-2 font-size-xl" onclick="document.location = '../../registro.html'">Registro</div>
-        <div class="g-700 p-3 m-t-2 font-size-xl" onclick="document.location = '../../login.html'">Login</div>
+        <div id='menu_movil_usuario'>
+            <div class="g-700 p-3 m-t-2 font-size-xl" onclick="document.location = '../registro.html'">Registro</div>
+            <div class="g-700 p-3 m-t-2 font-size-xl" onclick="document.location = '../login.html'">Login</div>
+        </div>
         <div class="g-700 bt w-100 align-item-right align-item-left m-t-2"></div>
-        <div class="g-500 p-3 font-size-xl" onclick="document.location='../../noticias.html'">Noticias</div>
-        <div class="g-500 p-3 m-t-3 font-size-xl" onclick="document.location='../Videojuegos/videojuegos.html'">Videojuegos</div>
-        <div class="g-500 p-3 m-t-3 font-size-xl" onclick="document.location='../Series/series.html'">Series</div>
-        <div class="g-500 p-3 m-t-3 font-size-xl" onclick="document.location='../Peliculas/peliculas.html'">Peliculas</div>
+        <div class="g-500 p-3 font-size-xl" onclick="document.location = 'noticias.html'">Noticias</div>
+        <div class="g-500 p-3 m-t-3 font-size-xl" onclick="document.location = '../Videojuegos/videojuegos.html'">Videojuegos</div>
+        <div class="g-500 p-3 m-t-3 font-size-xl" onclick="document.location = '../Series/series.html'">Series</div>
+        <div class="g-500 p-3 m-t-3 font-size-xl" onclick="document.location = 'peliculas.html'">Peliculas</div>
     </div>
-    <script src="../../menu.js"></script>
+    <script src="../menu.js"></script>
+    <script src="../Scripts/api_url.js"></script>
+    <script src="../Scripts/login.js"></script>
+    <script src="../Scripts/noticias.js"></script>
+    <script src="peliculas.js"></script>
 </body>
 </html>

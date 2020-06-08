@@ -55,46 +55,40 @@
                     <button class="boton_nav_cards" id="boton_der">></button>
                 </div>
             </div>
-            <div class="m-t-3 flex-row" id="panel_cards">
-                <div class="flex-column column-card col-s-12 col-l-4 m-right-3">
+            <div class="m-t-3 flex-row flex-grow" id="panel_cards">
+                <div class="flex-column m-s-3">
                     <div class="b-red red-accent-card"></div>
                     <div class="b-dark-gray title-card">Videojuegos</div>
                     <div class="b-light-gray content-card text-center" id="img_card_vid">
-                        <img class="img-fluid p-1" src="https://picsum.photos/800/200" id="imagen_secundaria">
                         <!-- Agregar imagen de la última noticia de videojuegos -->
                     </div>
                     <div class="b-dark-gray comment-card" id="text_card_vid">
-                        <h1>Titulo</h1>
                         <!-- Título -->
                     </div>
                 </div>
-                <div class="flex-column column-card col-s-12 col-l-4 m-s-3">
+                <div class="flex-column m-s-3">
                     <div class="b-red red-accent-card"></div>
                     <div class="b-dark-gray title-card">Series</div>
                     <div class="b-light-gray content-card text-center" id="img_card_ser">
-                        <img class="img-fluid p-1" src="https://picsum.photos/200/800" id="imagen_secundaria">
                         <!-- Agregar imagen de la última noticia de series -->
                     </div>
                     <div class="b-dark-gray comment-card" id="text_card_ser">
-                        <h1>Titulo</h1>
                         <!-- Título y resumen de la última noticia -->
                     </div>
                 </div>
-                <div class="flex-column column-card col-s-12 col-l-4 m-left-3">
+                <div class="flex-column m-s-3">
                     <div class="b-red red-accent-card"></div>
                     <div class="b-dark-gray title-card">Peliculas</div>
                     <div class="b-light-gray content-card text-center" id="img_card_pel">
-                        <img class="img-fluid p-1" src="https://picsum.photos/800/800" id="imagen_secundaria">
                         <!-- Agregar imagen de la última noticia de películas -->
                     </div>
                     <div class="b-dark-gray comment-card" id="text_card_pel">
-                        <h1>Titulo</h1>
                         <!-- Título y resumen de la última noticia -->
                     </div>
                 </div>
             </div>
         </div>
-        <div class=" flex-column align-item-right col-2" id="panel_registro">
+        <div class=" flex-column align-item-right registro_control" id="panel_registro">
             <div class="p-2 sp-2 text-center" id="titulo_registro">
                 Login
             </div>
@@ -127,15 +121,20 @@
     <div class="flex-column text-center" id="menu_movil">
         <!-- Botón para cerrar -->
         <div class="g-700 m-2 font-size-xxl change-cursor-on-hover" id="cerrar_menu_movil" onclick="ocultarMenu()">x</div>
-        <div class="g-700 p-3 m-t-2 font-size-xl" onclick="document.location = 'registro.html'">Registro</div>
-        <div class="g-700 p-3 m-t-2 font-size-xl" onclick="document.location = 'login.html'">Login</div>
+        <div id='menu_movil_usuario'>
+            <div class="g-700 p-3 m-t-2 font-size-xl" onclick="document.location = 'registro.html'">Registro</div>
+            <div class="g-700 p-3 m-t-2 font-size-xl" onclick="document.location = 'login.html'">Login</div>
+        </div>
         <div class="g-700 bt w-100 align-item-right align-item-left m-t-2"></div>
         <div class="g-500 p-3 font-size-xl" onclick="document.location = 'noticias.html'">Noticias</div>
         <div class="g-500 p-3 m-t-3 font-size-xl" onclick="document.location = 'Videojuegos/videojuegos.html'">Videojuegos</div>
         <div class="g-500 p-3 m-t-3 font-size-xl" onclick="document.location = 'Series/series.html'">Series</div>
         <div class="g-500 p-3 m-t-3 font-size-xl" onclick="document.location = 'Peliculas/peliculas.html'">Peliculas</div>
     </div>
+    <script src="Scripts/api_url.js"></script>
+    <script src="Scripts/noticias.js"></script>
     <script src="menu.js"></script>
     <script src="index.js"></script>
+    <script src="Scripts/login.js"></script>
 </body>
 </html>
