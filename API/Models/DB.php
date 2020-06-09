@@ -1,6 +1,6 @@
 <?php
 /* Como todas las operaciones ocupan DB.php, ponemos aqui la opcion de responder a solictud OPTIONS. */
-require_once('optionsController.php');
+require_once('../Controllers/optionsController.php');
 
 /* Si se usa la base de datos, tenemos la seguridad de que se establece la zona horaria. */
 date_default_timezone_set('America/Monterrey');

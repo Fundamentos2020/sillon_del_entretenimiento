@@ -26,3 +26,6 @@ RewriteRule ^noticias/palabra_clave=([0-9A-Za-z]+)$ Controllers/noticiasControll
 RewriteRule ^comentarios$ Controllers/comentariosController.php [L]
 RewriteRule ^comentarios/id_noticia=([0-9]+)$ Controllers/comentariosController.php?id_noticia=$1 [L]
 RewriteRule ^comentarios/id_comentario=([0-9]+)$ Controllers/comentariosController.php?id_comentario=$1 [L]
+
+#Imagenes
+RewriteRule ^upload_imagen$ Controllers/imagenesController.php [L]

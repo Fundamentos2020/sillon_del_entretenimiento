@@ -56,9 +56,6 @@ function cargaNoticiasIniciales()   {
         const noticia = arreglo_noticias[i];
         if( noticia === undefined )
         {
-            const contenedor_noticia = document.createElement('div');
-            contenedor_noticia.className = 'card_pag_noticias w-s-50 m-s-2';
-            contenedor_tarjetas.appendChild( contenedor_noticia );
             break ;
         }
 
@@ -80,7 +77,7 @@ function dameTarjetaNoticia( noticia )  {
 
     const img = document.createElement('img');
     img.className = 'img-fluid p-2';
-    img.src = '../' + noticia.imagepath ;
+    img.src = noticia.imagepath ;
 
     const titulo = document.createElement('h2');
     titulo.innerText = noticia.titulo ;

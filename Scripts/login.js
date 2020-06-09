@@ -1,15 +1,15 @@
 
 /* Boton de login */
-const boton_login = document.getElementById('boton_login');
-boton_login.addEventListener('click', login );
+var boton_login = document.getElementById('boton_login');
+boton_login.onclick = async function()  {
+    console.log( 'click' );
+    await login();
+}
 
 /* Se intenta ingresar al cargar. */
 window.onload = function()    {
     if( ExisteSesion() )    {
         PanelUsuario();
-    }
-    else    {
-        PanelRegistro();
     }
 };
 

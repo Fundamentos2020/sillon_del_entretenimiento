@@ -33,21 +33,20 @@
             </div>
             <div class="text-center">
                 <!-- Extraer de aquí el titulo. -->
-                <textarea id="titulo_editar_noticia" rows="2" cols="50">
-                </textarea>
+                <textarea id="titulo_editar_noticia" rows="2" cols="50"></textarea>
             </div>
             <br>
             <br>
             <div class="text-center">
                 <label for="img">Selecciona una imagen:</label>
+                <!-- Obtener una imagen. -->
                 <input type="file" id="img" name="img" accept="image/*">
             </div>
             <br>
             <br>
             <div class="text-center">
                 <!-- Extraer de aquí el texto de la noticia. -->
-                <textarea id="texto_editar_noticia" rows="4" cols="50">
-                </textarea>
+                <textarea id="texto_editar_noticia" rows="4" cols="50"></textarea>
             </div>
             <br>
             <br>
@@ -63,7 +62,7 @@
             <br>
             <br>
             <div class="w-100 text-center">
-            <button class="boton_rojo g-700 change-cursor-on-hover">CREAR</button>
+            <button class="boton_rojo g-700 change-cursor-on-hover" id='boton_upload'>CREAR</button>
             </div>
             <br>
         </div>
@@ -72,5 +71,6 @@
     <script src="Scripts/api_url.js"></script>
     <script src="Scripts/noticias.js"></script>
     <script src="Scripts/busqueda.js"></script>
+    <script src="editar_noticia.js"></script>
 </body>
 </html>
