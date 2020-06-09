@@ -237,25 +237,13 @@ try {
             $response->setData( $usuarios_modificados );
         }
 
-        else    {   /* Si es un usuario modificando su nombre de usuario y/o contraseña. */
-            /* Se envia los dos datos aun en caso de que solo se modifique uno. */
-            if( !isset( $json_patch_data->nombre_usuario ) 
-                || !isset( $json_patch_data->contrasenia )
+        else    {   /* Si es un usuario modificando su contraseña. */
+            if( !isset( $json_patch_data->contrasenia )
                     || !isset( $json_patch_data->contrasenia_vieja ) )
                 throw new Exception('Faltan parametros para el PATCH.', 400 );
 
-            $nuevo_nombre_usuario = $json_patch_data->nombre_usuario ;
             $nueva_contrasenia_hash = password_hash( $json_patch_data->contrasenia, PASSWORD_DEFAULT );
             $vieja_contrasenia = $json_patch_data->contrasenia_vieja ;
-
-            $stringSQL = 'SELECT * FROM usuario WHERE nombreusuario = :nombre_usuario';
-            $query = $connection->prepare( $stringSQL );
-            $query->bindParam(':nombre_usuario', $nuevo_nombre_usuario, PDO::PARAM_STR );
-
-            $query->execute();
-            if( $query->fetch( PDO::FETCH_ASSOC ) )    {
-                throw new DatabaseException('Ya existe un nombre de usuario con ese valor');
-            }
 
             $stringSQL = 'SELECT contrasenia FROM usuario WHERE idusuario = :id_usuario';
             $query = $connection->prepare( $stringSQL );
@@ -267,11 +255,10 @@ try {
                 throw new SessionException('La contraseña es incorrecta.');
             }
 
-            $stringSQL = 'UPDATE usuario SET nombreusuario = :nuevo_nombre_usuario, contrasenia = :nueva_contrasenia_hash
+            $stringSQL = 'UPDATE usuario SET contrasenia = :nueva_contrasenia_hash
                             WHERE idusuario = :id_usuario';
 
             $query = $connection->prepare( $stringSQL );
-            $query->bindParam(':nuevo_nombre_usuario', $nuevo_nombre_usuario, PDO::PARAM_STR );
             $query->bindParam(':nueva_contrasenia_hash', $nueva_contrasenia_hash, PDO::PARAM_STR );
             $query->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT );
 
@@ -293,7 +280,7 @@ try {
 
             $response->setHttpStatusCode( 200 );
             $response->setSuccess( true );
-            $response->addMessage('Usuario modificado');
+            $response->addMessage('Contraseña modificada');
             $response->setData( $usuario_modificado->getArray() );
         }
     }

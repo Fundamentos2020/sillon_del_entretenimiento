@@ -37,7 +37,7 @@ async function PostComentario( comentario, id_noticia ) {
 
     let data = await fetch( url_api, param )
                         .then( response => response.json() )
-                        .then( data => ValidateCommentResponse( data ) )
+                        .then( data => { return data ; } )
                         .catch( error => alert( error ) )
 
     return data ;
@@ -59,9 +59,46 @@ function ValidateCommentResponse( response ) {
 }
 
 async function PatchComentario( id_comentario, texto )    {
+    let datos = {
+        id_comentario:id_comentario,
+        texto_comentario:texto
+    };
 
+    let url_api = `${api}comentarios`;
+
+    let param = {
+        headers: {
+            'Content-type':'application/json',
+            'SILLON':localStorage.getItem('token_acceso')
+        },
+        method: 'PATCH',
+        body: JSON.stringify( datos )
+    }
+
+    await fetch( url_api, param )
+            .then( response => response.json() )
+            .then( data => console.log( data ))
+            .catch( error => console.log( error ))
 }
 
 async function DeleteComentario( id_comentario )   {
+    let datos = {
+        id_comentario:id_comentario
+    };
 
+    let url_api = `${api}comentarios`;
+
+    let param = {
+        headers: {
+            'Content-type':'application/json',
+            'SILLON':localStorage.getItem('token_acceso')
+        },
+        method: 'DELETE',
+        body: JSON.stringify( datos )
+    }
+
+    await fetch( url_api, param )
+            .then( response => response.json() )
+            .then( data => console.log( data ))
+            .catch( error => console.log( error ))
 }

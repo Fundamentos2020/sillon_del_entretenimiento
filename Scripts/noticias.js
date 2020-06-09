@@ -2,13 +2,6 @@
 /* Obtiene tantas noticias y las devuelve en un arreglo json. */
 async function ObtenerNoticias( num_noticias )  {
     let url_api = api + 'noticias/num_noticias=' + num_noticias ;
-    let param_login = {
-        headers:{
-            'Content-type':'application/json',
-        },
-        method:'GET'
-    };
-
     let response = await fetch( url_api );
     let data = await response.json();
 

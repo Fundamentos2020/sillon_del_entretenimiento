@@ -67,6 +67,34 @@ try {
             $response->addMessage('Noticia recuperada');
             $response->setData( $noticia->getArray() );
         }
+
+        else if( isset($_GET['palabra_clave']) )   {
+            $palabra_clave = $_GET['palabra_clave'];
+
+            $connection = DB::getConnection();
+            $stringSQL = "SELECT idnoticia, seccion, idmoderador, titulo,
+                            DATE_FORMAT( fecha, '%Y-%m-%d %H:%i' ) AS fecha, texto, imagepath 
+                                FROM noticia " ;
+
+            $stringSQL2 = sprintf("WHERE titulo LIKE '%%%s%%'", $palabra_clave );
+
+            $stringSQL = $stringSQL . $stringSQL2 ;
+
+            $query = $connection->prepare( $stringSQL );
+            $query->bindParam(':param', $palabra_clave, PDO::PARAM_STR );
+            
+            $query->execute();
+            $noticias = array();
+            while( $row = $query->fetch( PDO::FETCH_ASSOC ) )   {
+                $noticia = Noticia::NuevaNoticiaDesdeFila( $row );
+                $noticias[] = $noticia->getArray();
+            }
+
+            $response->setHttpStatusCode( 200 );
+            $response->setSuccess( true );
+            $response->addMessage('Búsqueda noticias');
+            $response->setData( $noticias );
+        }
     }
 
     else if( $_SERVER['REQUEST_METHOD'] === 'POST' )    {

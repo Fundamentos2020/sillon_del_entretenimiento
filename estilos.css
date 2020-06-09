@@ -188,6 +188,7 @@ body {
     background-color: #464646 ;
     max-height: 350px ;
     max-width: 320px ;
+    min-width: 200px ;
 }
 
 #panel_reg > div,a   {

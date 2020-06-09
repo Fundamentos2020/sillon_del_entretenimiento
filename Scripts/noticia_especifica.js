@@ -20,7 +20,7 @@ function AgregaNoticia()    {
     c_imagen.innerHTML = `<img class="img-fluid p-1" src="${noticia.imagepath}">`;
 
     let c_texto = document.getElementById('c_texto_noticia');
-    c_texto.innerHTML = `${noticia.texto}`;
+    c_texto.innerHTML = `${noticia.texto}<div><i>${noticia.fecha}</i></div>`;
 }
 
 /* Agrega los comentarios de la noticia. */
@@ -57,29 +57,23 @@ function AgregaCajaTexto()  {
 }
 
 async function Comenta() {
+    await ActualizaSesion();
     let texto = document.getElementById('caja_texto_comentarios').value ;
     let noticia_id = noticia.id ;
     let result = await PostComentario( texto, noticia_id );
-
-    if( !result )   {
-        await ActualizaSesion();
-        await PostComentario( texto, noticia_id );
-    }
-
-    await AgregaComentarios();
 }
 
 function DameComentarioRol( comentario ) {
     let contenedor = document.createElement('div');
     contenedor.className = 'comentario flex-column b-dark-gray p-2 m-1';
-    contenedor.id = `${comentario.id}`;
+    contenedor.id = `c_${comentario.id}`;
 
     let div_texto = document.createElement('div');
     div_texto.innerText = `${comentario.texto}`;
 
     let div_nombre_usuario = document.createElement('div');
     div_nombre_usuario.className = 'p-2';
-    div_nombre_usuario.innerHTML = `<i>${comentario.nombre_usuario}</i>`;
+    div_nombre_usuario.innerHTML = `<i>${comentario.nombre_usuario}</i>//${comentario.fecha}`;
 
     if( ExisteSesion() )    {
         div_nombre_usuario.innerHTML += '<div>' ;
@@ -91,13 +85,12 @@ function DameComentarioRol( comentario ) {
             onclick='EditarComentario( this.id )'>Modificar</button>`;
         }
 
-        if( rol != 'Usuario' )  {
+        if( rol !== 'Usuario' )  {
             div_nombre_usuario.innerHTML += `<button id=${comentario.id} class='boton_rojo m-1 change-cursor-on-hover'
             onclick='EliminarComentario( this.id )'>Eliminar</button>`;
         }
 
         div_nombre_usuario.innerHTML += '</div>'
-
     }
 
     contenedor.appendChild( div_texto );
@@ -106,10 +99,37 @@ function DameComentarioRol( comentario ) {
     return contenedor ;
 }
 
-async function EditarComentario( id )   {
-    console.log( `Modificar ${id}` );
+async function EditarComentario( id )   {   /* Vamos a crear una caja de texto en el comentario. */
+    var contenedor = document.getElementById(`c_${id}`);
+    let children = contenedor.children ;
+    let texto = children[0].innerText ;
+
+    console.log( id );
+    
+    contenedor.innerHTML = `
+        <div>
+        <div class='m-2'>
+            <textarea class='texto' id='caja_modificar${id}'>${texto}</textarea>
+        </div>
+        <div class='m-2'>
+            <button class='boton_rojo m-1 change-cursor-on-hover' id='${id}' onclick='PostModificacion( this.id )'>Modificar</button>
+            <button class='boton_rojo m-1 change-cursor-on-hover' id='${id}' onclick='Recargar()'>Cancelar</button>
+        </div>
+        </div>
+    `;
+}
+
+function Recargar() {
+    location.reload();
+}
+
+async function PostModificacion( id )   {
+    let texto_modificado = document.getElementById(`caja_modificar${id}`).value ;
+    await PatchComentario( id, texto_modificado );
+    location.reload();
 }
 
 async function EliminarComentario( id ) {
-    console.log( `Eliminar ${id}` );
+    await DeleteComentario( id );
+    location.reload();
 }

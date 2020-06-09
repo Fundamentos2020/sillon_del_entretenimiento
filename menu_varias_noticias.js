@@ -11,6 +11,11 @@ let numNoticias ;
 /* Obtener el json. */
 async function obtenerNoticias()  {
     arreglo_noticias = await ObtenerNoticias( 20 );
+
+    arreglo_noticias.forEach( noticia => {
+        AgregaNoticiaSessionStorage( noticia );
+    });
+
     numNoticias = arreglo_noticias.length ;
     cargaNoticiasIniciales();
     agregarBotonesNavNoticias();
@@ -30,6 +35,7 @@ function agregarBotonesNavNoticias()    {
             boton_nav.className = 'boton_nav_noticias m-left-2';
 
         boton_nav.id = i ;
+        boton_nav.innerHTML = `<h3>${i+1}</h3>` ;
         boton_nav.onclick = cargaSiguientesNoticias ;
         contenedor_nav_noticias.appendChild( boton_nav );
     }
@@ -54,11 +60,7 @@ function cargaNoticiasIniciales()   {
     var i ;
     for( i = 0 ; i < 2 ; ++i )  {
         const noticia = arreglo_noticias[i];
-        if( noticia === undefined )
-        {
-            const contenedor_noticia = document.createElement('div');
-            contenedor_noticia.className = 'card_pag_noticias w-s-50 m-s-2';
-            contenedor_tarjetas.appendChild( contenedor_noticia );
+        if( noticia === undefined ) {
             break ;
         }
 
@@ -69,7 +71,6 @@ function cargaNoticiasIniciales()   {
 
 /* Toma una noticia y crea una tarjeta con ella. */
 function dameTarjetaNoticia( noticia )  {
-    console.log( noticia );
     const contenedor_noticia = document.createElement('div');
     contenedor_noticia.className = 'card_pag_noticias w-s-50 m-s-2';
     contenedor_noticia.onclick = CargaNoticia ;

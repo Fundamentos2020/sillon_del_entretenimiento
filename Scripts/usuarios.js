@@ -42,3 +42,26 @@ async function ObtenerUsuarios()    {
 
     return res ;
 }
+
+async function CambiaContrasenia( nombre_usuario, contrasenia_nueva, contrasenia_vieja ) {
+    var url_api = `${api}usuarios` ;
+    let datos = {
+        nombre_usuario:nombre_usuario,
+        contrasenia:contrasenia_nueva,
+        contrasenia_vieja:contrasenia_vieja
+    };
+
+    let param = {
+        headers: {
+            'Content-type':'application/json',
+            'SILLON':localStorage.getItem('token_acceso')
+        },
+        method: 'PATCH',
+        body: JSON.stringify( datos )
+    };
+
+    let response = await fetch( url_api, param );
+    let data = await response.json();
+
+    return data ;
+}

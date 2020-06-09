@@ -29,6 +29,7 @@ function agregarBotonesNavNoticias()    {
             boton_nav.className = 'boton_nav_noticias m-left-2';
 
         boton_nav.id = i ;
+        boton_nav.innerHTML = `<h3>${i+1}</h3>` ;
         boton_nav.onclick = cargaSiguientesNoticias ;
         contenedor_nav_noticias.appendChild( boton_nav );
     }

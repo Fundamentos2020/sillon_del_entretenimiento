@@ -8,6 +8,9 @@ window.onload = function()    {
     if( ExisteSesion() )    {
         PanelUsuario();
     }
+    else    {
+        PanelRegistro();
+    }
 };
 
 /* Login */
@@ -29,10 +32,10 @@ async function login()    {
         method:'POST'
     };
 
-    fetch( url_api, param_login )
-        .then( response => response.json() )
-        .then( data => ValidateSesionResponse( data ) )
-        .catch( error => console.log( error) )
+    await fetch( url_api, param_login )
+            .then( response => response.json() )
+            .then( data => ValidateSesionResponse( data ) )
+            .catch( error => console.log( error) )
 }
 
 async function ActualizaSesion()   {
@@ -53,10 +56,10 @@ async function ActualizaSesion()   {
         method:'PATCH'
     };
 
-    fetch( url_api, param )
-        .then( response => response.json() )
-        .then( data => ValidateSesionResponseA( data ) )
-        .catch( error => console.log( error ) )
+    await fetch( url_api, param )
+            .then( response => response.json() )
+            .then( data => ValidateSesionResponseA( data ) )
+            .catch( error => console.log( error ) )
 }
 
 function ValidateSesionResponse( response ) {
@@ -148,7 +151,7 @@ function PanelUsuario()  {
     <h1>${localStorage.getItem('nombre_usuario')}</h1>
     </div>
     <div class="text-center">
-    <a href="Usuarios/Cuenta.html">Administrar Cuenta</a>
+    <a href="/Usuarios/Cuenta.html">Administrar Cuenta</a>
     </div>
     <div class="text-center">
     <a id="link_cerrar_sesion" href="">Cerrar sesión</a>
@@ -190,7 +193,7 @@ function PanelRegistro()    {
         <button class="boton_rojo change-cursor-on-hover" id="boton_login">INICIAR SESIÓN</button>
     </div>
     <div class="flex-column p-2">
-        <a href="registro.html" class="" onclick="document.location = 'registro.html'">Registrarse</a>
+        <a href="/registro.html" class="">Registrarse</a>
         <a href="">¿Olvidaste tu contraseña?</a>
     </div>
     ` ;

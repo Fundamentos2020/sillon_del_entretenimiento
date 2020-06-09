@@ -26,7 +26,7 @@ async function login()    {
         .then( data => ValidateSesionResponse( data ) )
         .catch( error => console.log( error) )
 
-    window.location.href = index ;
+    window.location.href = '/index.html' ;
 }
 
 

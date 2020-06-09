@@ -164,7 +164,7 @@ try {
         }
 
         /* Solo se actualiza el texto. Un asterisco al final indica cuantas veces fue editado. */
-        $texto = $json_patch_data->texto . '*' ;
+        $texto = $json_patch_data->texto_comentario . '*' ;
 
         $stringSQL = 'UPDATE comentario SET texto = :texto WHERE idcomentario = :id_comentario';
         $query = $connection->prepare( $stringSQL );
@@ -218,15 +218,15 @@ try {
             throw new SessionException('El token de acceso ha caducado.');
         }
 
-        if( !isset( $json_patch_data->texto_comentario ) || !isset( $json_patch_data->id_comentario ) ) {
-            throw new Exception('Falta algún parametro para PATCH.', 400 );
+        if( !isset( $json_patch_data->id_comentario ) ) {
+            throw new Exception('Falta algún parametro para DELETE.', 400 );
         }
 
         $id_comentario = $json_patch_data->id_comentario ;
         $usuario = Sesion::UsuarioDeSesion( $token_acceso, $connection );
         $comentario = Comentario::ComentarioDesdeId( $id_comentario, $connection );
 
-        if( $usuario->getRol() === 'Usuario' || $usuario->getID() !== $comentario->getIdusuario() ) {
+        if( $usuario->getRol() === 'Usuario' && $usuario->getID() !== $comentario->getIdusuario() ) {
             throw new Exception('No tiene permiso para eliminar.', 403 );
         }
 

@@ -20,6 +20,7 @@ RewriteRule ^noticias$ Controllers/noticiasController.php [L]
 RewriteRule ^noticias/num_noticias=([0-9]+)$ Controllers/noticiasController.php?num_noticias=$1 [L]
 RewriteRule ^noticias/num_noticias=([0-9]+)&seccion=([A-z]+)$ Controllers/noticiasController.php?num_noticias=$1&seccion=$2 [L]
 RewriteRule ^noticias/id_noticia=([0-9]+)$ Controllers/noticiasController.php?id_noticia=$1 [L]
+RewriteRule ^noticias/palabra_clave=([0-9A-Za-z]+)$ Controllers/noticiasController.php?palabra_clave=$1 [L]
 
 #Comentarios
 RewriteRule ^comentarios$ Controllers/comentariosController.php [L]
