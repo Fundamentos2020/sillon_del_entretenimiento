@@ -261,17 +261,21 @@ try {
             $stringSQL .= ' imagepath = :imagepath';
             $antes = TRUE ;
 
-            /* Eliminar la imagen anterior de la noticia. */
-            $filesys_array = explode('\\', __DIR__ );
-            $curr_dir = end( $filesys_array );
-            $image_path = str_replace( $curr_dir, 'Imagenes', __DIR__ ) . '\\';
-            $nombre_imagen = $noticia->getImagePath();
-            $nombre_imagen = explode('/', $nombre_imagen );
-            $nombre_imagen = end( $nombre_imagen );
+            $path_nuevo = $json_patch_data->imagepath ;
+            $path_antiguo = $noticia->getImagePath();
+            if( strcmp( $path_antiguo, $path_nuevo ) !== 0 )   {
+                /* Eliminar la imagen anterior de la noticia. */
+                $filesys_array = explode('\\', __DIR__ );
+                $curr_dir = end( $filesys_array );
+                $image_path = str_replace( $curr_dir, 'Imagenes', __DIR__ ) . '\\';
+                $nombre_imagen = $noticia->getImagePath();
+                $nombre_imagen = explode('/', $nombre_imagen );
+                $nombre_imagen = end( $nombre_imagen );
 
-            $image_path = $image_path . $nombre_imagen ;
-            if( !unlink( realpath( $image_path ) ) )    {
-                throw new Exception('NO se pudo eliminar la imagen anterior de la noticia', 500 );
+                $image_path = $image_path . $nombre_imagen ;
+                if( !unlink( realpath( $image_path ) ) )    {
+                    throw new Exception('NO se pudo eliminar la imagen anterior de la noticia', 500 );
+                }
             }
         }
 
