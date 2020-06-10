@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
+    <title>Noticias</title>
+</head>
+<body>
+    <div class="flex-row p-3" id="top_row">
+        <div class="p-1 g-500 sp-3">
+            TRENDING:
+        </div>
+        <div class="align-item-right">
+            <input type="text" placeholder="SEARCH" id="input_busqueda">
+        </div>
+    </div>
+    <div class="flex-row top_second_row">
+        <div class="align-item-center titulo_pagina change-cursor-on-hover" onclick="document.location = 'index.html'" >
+            Sillón del Entretenimiento
+        </div>
+        <div class="align-item-right hidden-if-less-than-768">
+            <div class="nav-bar flex-row p-0 flex-wrap">
+                <div class="w-m-50 w-l-25" onclick="document.location = 'noticias.html'">Noticias</div>
+                <div class="w-m-50 w-l-25" onclick="document.location = 'videojuegos.html'">Videojuegos</div>
+                <div class="w-m-50 w-l-25" onclick="document.location = 'series.html'">Series</div>
+                <div class="w-m-50 w-l-25" onclick="document.location = 'peliculas.html'">Películas</div>
+            </div>
+        </div>
+        <div class="hidden-if-more-than-1285" id="boton_menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="flex-row" id="panel_principal">
+        <div class="flex-column flex-grow" id="panel_izquierdo">
+            <h1 class="g-200" id='titulo_palabra'>Noticias</h1>
+            <div class="contenedor_cards w-s-100 flex-row" id="contenedor_tarjetas">
+                <!-- Se actualiza las tarjetas de aceurdo a las noticias en el json. -->
+            </div>
+            <div class="m-t-5 flex-row" id="contenedor_botones_nav_noticias">
+                <!-- Se actualiza el número de botones de acuerdo al número de noticias. -->
+            </div>
+        </div>
+        <div class="flex-column align-item-right col-2" id="panel_registro">
+            <div class="p-2 sp-2 text-center" id="titulo_registro">
+                Login
+            </div>
+            <div class="titulo_registro_secundario sp-2 text-center">
+                Nombre de usuario
+            </div>
+            <input class="background_input text-center" type="text" id="nombre_usuario">
+            <div class="titulo_registro_secundario text-center"> 
+                Contraseña
+            </div>
+            <input class="background_input" type="password" id="input_contrasena">
+            <div class="titulo_registro_secundario flex-row">
+                <input type="checkbox"><span>Recuerdame</span>
+            </div>
+            <div class="p-1 text-center">
+                <button class="boton_rojo change-cursor-on-hover" id="boton_login">INICIAR SESIÓN</button>
+            </div>
+            <div class="flex-column p-2">
+                <a href="registro.html" class="" onclick="document.location = 'registro.html'">Registrarse</a>
+                <a href="">¿Olvidaste tu contraseña?</a>
+            </div>
+        </div>
+        <div id="panel_comentarios_recientes">
+            <div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Menu para móvil -->
+    <div class="flex-column text-center" id="menu_movil">
+        <!-- Aquí insertar menú para móvil -->
+    </div>
+    <script src="../JS/menu_movil.js"></script>
+    <script src="../JS/menu.js"></script>
+    <script src="../JS/api_url.js"></script>
+    <script src="../JS/busqueda.js"></script>
+    <script src="../JS/login.js"></script>
+    <script src="../JS/noticias.js"></script>
+    <script src="../JS/setup_busqueda.js"></script>
+</body>
+</html>

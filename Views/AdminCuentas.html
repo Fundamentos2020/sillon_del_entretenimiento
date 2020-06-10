@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <title>Administración de Cuentas</title>
+</head>
+<body>
+    <div class="flex-row p-3" id="top_row">
+        <div class="p-1 g-500 sp-3">
+            TRENDING:
+        </div>
+        <div class="align-item-right">
+            <input type="text" placeholder="SEARCH" id="input_busqueda">
+        </div>
+    </div>
+    <div class="flex-row top_second_row">
+        <div class="align-item-center titulo_pagina change-cursor-on-hover" onclick="document.location = 'index.html'" >
+            Sillón del Entretenimiento
+            <br>
+            Administración de Cuentas
+        </div>
+    </div>
+    <div class="text-center p-3">
+    </div>
+    <div class="flex-column text-center col-12" id="panel_principal">
+        <!-- Aquí se insertan las tarjetas de usuarios. -->
+    </div>
+    <script src="../JS/api_url.js"></script>
+    <script src="../JS/usuarios.js"></script>
+    <script src="../JS/busqueda.js"></script>
+    <script src="../JS/AdminCuentas.js"></script>
+</body>
+</html>
