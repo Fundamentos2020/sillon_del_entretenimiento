@@ -260,6 +260,19 @@ try {
 
             $stringSQL .= ' imagepath = :imagepath';
             $antes = TRUE ;
+
+            /* Eliminar la imagen anterior de la noticia. */
+            $filesys_array = explode('\\', __DIR__ );
+            $curr_dir = end( $filesys_array );
+            $image_path = str_replace( $curr_dir, 'Imagenes', __DIR__ ) . '\\';
+            $nombre_imagen = $noticia->getImagePath();
+            $nombre_imagen = explode('/', $nombre_imagen );
+            $nombre_imagen = end( $nombre_imagen );
+
+            $image_path = $image_path . $nombre_imagen ;
+            if( !unlink( realpath( $image_path ) ) )    {
+                throw new Exception('NO se pudo eliminar la imagen anterior de la noticia', 500 );
+            }
         }
 
         $stringSQL .= ' WHERE idnoticia = :id_noticia';
@@ -335,12 +348,41 @@ try {
         }
 
         $id_noticia = $json_delete_data->id_noticia ;
-        $stringSQL = 'DELETE FROM noticia WHERE idnoticia = :id_noticia';
+
+        $stringSQL = 'SELECT imagepath FROM noticia WHERE idnoticia = :id_noticia';
+        $query = $connection->prepare( $stringSQL );
+        $query->bindParam(':id_noticia', $id_noticia, PDO::PARAM_INT );
+
+        $query->execute();
+        if( !($row = $query->fetch( PDO::FETCH_ASSOC )) )   {
+            throw new Exception('No se encontró la noticia.', 400 );
+        }
+
+        $stringSQL = 'DELETE FROM comentario WHERE idnoticia = :id_noticia';
         $query = $connection->prepare( $stringSQL );
         $query->bindParam(':id_noticia', $id_noticia, PDO::PARAM_INT );
 
         try {
             $connection->beginTransaction();
+
+            $query->execute();
+
+            /* Eliminar la imagen de la noticia. */
+            $filesys_array = explode('\\', __DIR__ );
+            $curr_dir = end( $filesys_array );
+            $image_path = str_replace( $curr_dir, 'Imagenes', __DIR__ ) . '\\';
+            $nombre_imagen = explode('/', $row['imagepath'] );
+            $nombre_imagen = end( $nombre_imagen );
+
+            $image_path = $image_path . $nombre_imagen ;
+            if( !unlink( realpath( $image_path ) ) )    {
+                throw new Exception('NO se pudo eliminar la noticia', 500 );
+            }
+
+            $id_noticia = $json_delete_data->id_noticia ;
+            $stringSQL = 'DELETE FROM noticia WHERE idnoticia = :id_noticia';
+            $query = $connection->prepare( $stringSQL );
+            $query->bindParam(':id_noticia', $id_noticia, PDO::PARAM_INT );
 
             $query->execute();
             if( $query->rowCount() == 0 )   {

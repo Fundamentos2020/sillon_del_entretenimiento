@@ -16,7 +16,7 @@
             <input type="text" placeholder="SEARCH" id="input_busqueda">
         </div>
     </div>
-    <div class="flex-row top_second_row">
+    <div class="flex-row top_second_row" id='barra_menu'>
         <div class="align-item-center titulo_pagina change-cursor-on-hover" onclick="document.location = 'index.html'">
             Sillón del Entretenimiento
         </div>
@@ -40,11 +40,11 @@
                 <div class="align-item-left align-item-center">
                     <button class="boton_nav_cards" id="boton_izq"><</button>
                 </div>
-                <div class="flex-grow border">
-                    <div class="b-dark-gray flex-column w-s-100 m-t-3" id="menu_mostrar_noticias">
-                        <!-- Imagen y título de noticia -->
-                    </div>
+                
+                <div class="b-dark-gray flex-column w-s-100 m-t-3" id="menu_mostrar_noticias">
+                    <!-- Imagen y título de noticia -->
                 </div>
+                
                 <div class="align-item-right align-item-center">
                     <button class="boton_nav_cards" id="boton_der">></button>
                 </div>
@@ -56,7 +56,7 @@
                     <div class="b-light-gray content-card text-center" id="img_card_vid">
                         <!-- Agregar imagen de la última noticia de videojuegos -->
                     </div>
-                    <div class="b-dark-gray comment-card" id="text_card_vid">
+                    <div class="b-dark-gray flex-grow comment-card" id="text_card_vid">
                         <!-- Título -->
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                     <div class="b-light-gray content-card text-center" id="img_card_ser">
                         <!-- Agregar imagen de la última noticia de series -->
                     </div>
-                    <div class="b-dark-gray comment-card" id="text_card_ser">
+                    <div class="b-dark-gray flex-grow comment-card" id="text_card_ser">
                         <!-- Título y resumen de la última noticia -->
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                     <div class="b-light-gray content-card text-center" id="img_card_pel">
                         <!-- Agregar imagen de la última noticia de películas -->
                     </div>
-                    <div class="b-dark-gray comment-card" id="text_card_pel">
+                    <div class="b-dark-gray flex-grow comment-card" id="text_card_pel">
                         <!-- Título y resumen de la última noticia -->
                     </div>
                 </div>

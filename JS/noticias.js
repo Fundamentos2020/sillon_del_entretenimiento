@@ -45,3 +45,23 @@ function CargaNoticia()   {
     
     window.location.href = 'noticia_especifica.html';
 }
+
+async function EliminarNoticia( id_noticia )    {
+    let url_api = api + 'noticias' ;
+    let datos = {
+        'id_noticia' :id_noticia
+    }
+    let param = {
+        headers:{
+            'Content-type':'application/json',
+            'SILLON': localStorage.getItem('token_acceso')
+        },
+        body: JSON.stringify( datos ),
+        method:'DELETE'
+    };
+
+    await fetch( url_api, param )
+            .then( response => response.text() )
+            .then( data => console.log( data ) )
+            .catch( error => console.log( error ) )
+}

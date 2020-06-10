@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <title>Sillon del Entretenimiento</title>
 </head>
@@ -21,7 +21,7 @@
             Sillón del Entretenimiento
         </div>
         <div class="align-item-center titulo_pagina">
-            Edición de Noticia
+            Modificar Noticia
         </div>
     </div>
     <div class="flex-row m-t-3" id="panel_noticia">
@@ -38,7 +38,7 @@
             <br>
             <br>
             <div class="text-center">
-                <label for="img">Selecciona una imagen:</label>
+                <label for="img">Imagen de reemplazo:</label>
                 <!-- Obtener una imagen. -->
                 <input type="file" id="img" name="img" accept="image/*">
             </div>
@@ -62,15 +62,15 @@
             <br>
             <br>
             <div class="w-100 text-center">
-            <button class="boton_rojo g-700 change-cursor-on-hover" id='boton_upload'>CREAR</button>
+            <button class="boton_rojo g-700 change-cursor-on-hover" id='boton_patch'>MODIFICAR</button>
             </div>
             <br>
         </div>
         <div class="col-1"></div>
     </div>
-    <script src="Scripts/api_url.js"></script>
-    <script src="Scripts/noticias.js"></script>
-    <script src="Scripts/busqueda.js"></script>
-    <script src="editar_noticia.js"></script>
+    <script src="../JS/api_url.js"></script>
+    <script src="../JS/noticias.js"></script>
+    <script src="../JS/busqueda.js"></script>
+    <script src="../JS/modificar_noticia.js"></script>
 </body>
 </html>

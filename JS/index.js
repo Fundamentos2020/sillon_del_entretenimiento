@@ -42,7 +42,7 @@ function cambiaTarjetaNoticiaPrincipal( noticia )  {
     c_imagen.className = 'text-center c_noticia_principal';
 
     let imagen = document.createElement('img');
-    imagen.className = 'img-fluid p-1 change-cursor-on-hover img_noticia_principal';
+    imagen.className = 'p-1 change-cursor-on-hover img_noticia_principal';
     imagen.id = `${noticia.id}`;
     imagen.onclick = CargaNoticia ;
     imagen.src = noticia.imagepath ;
@@ -61,7 +61,7 @@ function cambiaTarjetaNoticiaPrincipal( noticia )  {
     c_texto.appendChild( titulo );
     
     c_noticia_principal.appendChild( c_imagen );
-    c_noticia_principal.appendChild( c_texto );
+    c_noticia_principal.appendChild( titulo );
 }
 
 function dameImagenNoticiaSecundaria( noticia ) {
@@ -91,13 +91,18 @@ async function pideNoticiasRecientes()  {
     });
 
     MuestraNoticiasRecientes( noticias_recientes );
+
+    let todas_noticias = await ObtenerNoticias( 20 );
+    todas_noticias.forEach( noticia => {
+        AgregaNoticiaSessionStorage( noticia );
+    });
 }
 
 /* Se muestran las noticias más recientes de cada sección. */
 function MuestraTarjetasNoticias( videojuegos, series, peliculas )  {
     /* Tarjeta videojuegos. */
     var img = document.createElement('img');
-    img.className = 'img-fluid p-1 imagen_secundaria change-cursor-on-hover';
+    img.className = 'img-fluid p-1 imagen_secundaria change-cursor-on-hover  m-t-b-auto';
     img.src = `${videojuegos.imagepath}`;
     img.id = `${videojuegos.id}` ;
     img.onclick = CargaNoticia ;

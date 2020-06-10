@@ -22,16 +22,23 @@ function AgregaNoticia()    {
     let c_texto = document.getElementById('c_texto_noticia');
     c_texto.innerHTML = `${noticia.texto}<div><i>${noticia.fecha}</i></div>`;
 
+    c_texto.innerHTML += '<div>' ;
+
     if( localStorage.getItem('rol') === 'Administrador' || noticia.idmoderador == localStorage.getItem('id_usuario') )    {
         c_texto.innerHTML += `
-            <div>
             <button id=${noticia.id} class='boton_rojo m-1 change-cursor-on-hover'
             onclick='ModificaNoticia( this.id )'>Modificar</button>
-            <button id=${noticia.id} class='boton_rojo m-1 change-cursor-on-hover'
-            onclick='EliminaNoticia( this.id )'>Eliminar</button>
-            <div>
         `;
     }
+
+    if( localStorage.getItem('rol') === 'Administrador' )   {
+        c_texto.innerHTML += `
+            <button id=${noticia.id} class='boton_rojo m-1 change-cursor-on-hover'
+            onclick='EliminaNoticia( this.id )'>Eliminar</button>
+        `;
+    }
+
+    c_texto.innerHTML += '</div>' ;
 }
 
 /* Agrega los comentarios de la noticia. */
@@ -146,10 +153,11 @@ async function EliminarComentario( id ) {
     location.reload();
 }
 
-async function ModificaNoticia( id )    {
-    console.log( 'noticiaid:' + id );
+async function ModificaNoticia()    {
+    window.location.href = 'modificar_noticia.html';
 }
 
 async function EliminaNoticia( id )    {
-    console.log( 'noticiaid:' + id );
+    await EliminarNoticia( id );
+    window.location.href = 'index.html' ;
 }
