@@ -5,5 +5,5 @@ Fullstack news web page using:
   - MySQL for the database
   
 <p align="center">
-  <img src='imgs/2img.png' height='300'/>
+  <img src="imgs/2021-01-17 13-34-46.gif"/>
 </p>
